@@ -45,7 +45,7 @@ export default class AppNavigation extends React.Component {
                 ToastAndroid.show("再按一次退出应用", ToastAndroid.SHORT);
                 return true;
             }}>
-            <Scene hideNavBar key="root">
+            <Scene key="root">
                 <Scene component={Login} key="Login"/>
                
             </Scene>
