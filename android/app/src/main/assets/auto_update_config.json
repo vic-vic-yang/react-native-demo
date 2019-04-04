@@ -1,0 +1,6 @@
+{
+  "currentVersion": "2.50.11.100", //当前版本号
+  "role": "司机端", //角色
+  "product": "3eeb320b-fd1c-11e8-a981-00163e06c321", //产品线
+  "clientKey": "c27477c3-12d9-4d7d-be82-34aa56874e9d"//客户标识
+}
