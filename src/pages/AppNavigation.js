@@ -5,7 +5,7 @@ import React from "react";
 import {DeviceEventEmitter, ToastAndroid} from "react-native";
 import {Actions, Reducer, Router, Scene} from "react-native-router-flux";
 import Login from "./account/Login";
-
+import Theme from '../commons/Theme'
 
 //关闭黄色警告
 console.disableYellowBox = true;
@@ -18,7 +18,7 @@ const reducerCreate = params => {
     };
 };
 const getSceneStyle = () => ({
-    backgroundColor: "#f7f7f7"
+    backgroundColor: "#fff"
 });
 export default class AppNavigation extends React.Component {
 
@@ -45,8 +45,8 @@ export default class AppNavigation extends React.Component {
                 ToastAndroid.show("再按一次退出应用", ToastAndroid.SHORT);
                 return true;
             }}>
-            <Scene key="root">
-                <Scene component={Login} key="Login"/>
+            <Scene key="root" navigationBarStyle={{backgroundColor:Theme.backgroundColor}}>
+                <Scene component={Login} key="Login" hideNavBar={true}/>
                
             </Scene>
         </Router>

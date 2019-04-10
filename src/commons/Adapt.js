@@ -18,7 +18,7 @@ export function px2dp(px) {
  * 适配文字
  * @param {width、height} px 
  */
-export function px2sp(px) {
+export function px2sp(size) {
     if (PixelRatio === 2) {
         // iphone 5s and older Androids
         if (SCREEN_WIDTH < 360) {

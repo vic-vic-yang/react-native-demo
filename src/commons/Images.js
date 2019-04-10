@@ -4,8 +4,8 @@
 
 // 统一管理项目中的图片，格式按照下面的来
 const Images =  {
-    ShiTu:require('./images/ShiTu.png'),
-    
+    Logo:require('../assets/images/ic_launcher.png'),
+    Home:require('../assets/images/home.png'),
 };
 
 export default Images;

@@ -9,7 +9,7 @@ import {
 } from 'react-native';
  import { Provider } from 'mobx-react/native';
 import AppNavigation from './pages/AppNavigation';
-
+import Theme from './commons/Theme'
 // import CodePush from 'react-native-code-push'
 export const IS_IOS = Platform.OS === 'ios';
 export const IS_ANDROID = Platform.OS === 'android';
@@ -39,7 +39,7 @@ class App extends Component {
     render() {
         return (
             <View style={{ flex: 1 }}>
-                {IS_ANDROID && <StatusBar barStyle="light-content" />}
+                {IS_ANDROID && <StatusBar barStyle="light-content" backgroundColor={Theme.backgroundColor} />}
                 <Provider {...Stores}>
                     <AppNavigation />
                 </Provider>
