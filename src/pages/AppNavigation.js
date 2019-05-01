@@ -4,9 +4,13 @@
 import React from "react";
 import {DeviceEventEmitter, ToastAndroid} from "react-native";
 import {Actions, Reducer, Router, Scene} from "react-native-router-flux";
-import Login from "./account/Login";
+import Images from '../commons/Images'
 import Theme from '../commons/Theme'
-
+import Login from "./account/Login";
+import Home from "./home/index";
+import Demo from "./demo/index";
+import DemoList from "./demo/list";
+import DemoMap from "./demo/map";
 //关闭黄色警告
 console.disableYellowBox = true;
 
@@ -45,8 +49,14 @@ export default class AppNavigation extends React.Component {
                 ToastAndroid.show("再按一次退出应用", ToastAndroid.SHORT);
                 return true;
             }}>
-            <Scene key="root" navigationBarStyle={{backgroundColor:Theme.backgroundColor}}>
+            <Scene key="root" navigationBarStyle={{backgroundColor:Theme.backgroundColor}} titleStyle={{color:'#fff'}} backButtonImage={Images.Back} >
                 <Scene component={Login} key="Login" hideNavBar={true}/>
+                <Scene component={Home} key="Home" title='Home' />
+                <Scene component={Demo} key="Demo" title='Demo' />
+                <Scene component={DemoList} key="DemoList" title='DemoList' />
+                <Scene component={DemoMap} key="DemoMap" title='DemoMap' />
+                
+                
                
             </Scene>
         </Router>

@@ -3,15 +3,22 @@ import { View, Modal, Text, TouchableOpacity, Image, StyleSheet, Alert, ScrollVi
 import { px2dp, px2sp } from '../../commons/Adapt'
 import GlobalStyles from '../../commons/GlobalStyles'
 import Images from '../../commons/Images'
+import {Actions} from "react-native-router-flux";
+
+
+
 export default class Login extends Component {
     constructor(props) {
         super(props)
     }
+
+
+
     getBtn(type, name, callBack) {
         return (
 
             // < View style = { [styles.btn_wrap, styles.center]} >
-            <TouchableOpacity style={[styles.btn, styles.center]} onPress={()=>{}} activeOpacity={0.7}>
+            <TouchableOpacity style={[styles.btn, styles.center]} onPress={callBack} activeOpacity={0.7}>
                 <Text style={styles.btn_text}>{name}</Text>
 
             </TouchableOpacity>
@@ -26,11 +33,11 @@ export default class Login extends Component {
                 <View style={styles.title_line} />
                 <Image style={styles.image} source={Images.Logo}></Image>
                 <View style={styles.btn_view}>
-                    {this.getBtn('', 'Sign in', null)}
-                    {this.getBtn('', 'regest', null)}
+                    {this.getBtn('1', 'Sign in', ()=>{Actions.Home()})}
+                    {this.getBtn('2', 'Demo', ()=>{Actions.Demo()})}
                 </View>
                 <View style={styles.bottom_view}>
-                    <TouchableOpacity onPress={()=>{}} activeOpacity={0.7} style={styles.center}>
+                    <TouchableOpacity onPress={()=>{Actions.Home()}} activeOpacity={0.7} style={styles.center}>
                         <Text style={styles.else}>Or else</Text>
                         <Image style={styles.image_home} source={Images.Home}></Image>
                     </TouchableOpacity>

@@ -6,6 +6,7 @@
 const Images =  {
     Logo:require('../assets/images/ic_launcher.png'),
     Home:require('../assets/images/home.png'),
+    Back:require('../assets/images/back.png'),
 };
 
 export default Images;
