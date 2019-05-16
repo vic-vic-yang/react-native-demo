@@ -12,10 +12,11 @@
     "mobx-react": "^5.4.3",
     "react": "16.6.3",
     "react-native": "0.57.8",
+    "react-native-baidu-map": "^1.0.6",
     "react-native-router-flux": "^4.0.6",
     "react-native-splash-screen": "^3.2.0",
-    "react-redux": "^4.0.0",
-    "react-native-tab-navigator": "^0.3.4"
+    "react-native-tab-navigator": "^0.3.4",
+    "react-redux": "^4.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
