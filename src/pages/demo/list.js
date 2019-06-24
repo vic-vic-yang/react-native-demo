@@ -5,13 +5,18 @@ const dataArray = [
     {
         title: '地图', image: '', page: "DemoMap"
     },
-
+    {
+        title: '普通列表', image: '', page: "DemoComList"
+    },
+    {
+        title: '优化列表', image: '', page: "DemoComListNew"
+    },
 ]
 
 export default class list extends Component {
 
-    renderItem({item}) {
-        console.log("========",item)
+    renderItem({ item }) {
+        console.log("========", item)
         return (
             <TouchableOpacity onPress={() => { Actions.push(item.page) }} style={styles.item}>
                 <Text>{item.title}</Text>

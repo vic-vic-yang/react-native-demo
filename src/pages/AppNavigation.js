@@ -2,8 +2,8 @@
  * 导航配置
  */
 import React from "react";
-import {DeviceEventEmitter, ToastAndroid} from "react-native";
-import {Actions, Reducer, Router, Scene} from "react-native-router-flux";
+import { DeviceEventEmitter, ToastAndroid } from "react-native";
+import { Actions, Reducer, Router, Scene } from "react-native-router-flux";
 import Images from '../commons/Images'
 import Theme from '../commons/Theme'
 import Login from "./account/Login";
@@ -11,6 +11,9 @@ import Home from "./home/index";
 import Demo from "./demo/index";
 import DemoList from "./demo/list";
 import DemoMap from "./demo/map";
+import DemoComList from "./demo/ComList";
+import DemoComListNew from "./demo/ComListNew";
+
 //关闭黄色警告
 console.disableYellowBox = true;
 
@@ -39,7 +42,7 @@ export default class AppNavigation extends React.Component {
                 if (this._navigation && this._navigation >= 1) {
                     DeviceEventEmitter.emit("back");
                     Actions.pop();
-                    Actions.refresh({isRefresh: true})
+                    Actions.refresh({ isRefresh: true })
                     return true;
                 }
                 if (this.lastBackPressed && this.lastBackPressed + 2000 > Date.now()) {
@@ -49,15 +52,16 @@ export default class AppNavigation extends React.Component {
                 ToastAndroid.show("再按一次退出应用", ToastAndroid.SHORT);
                 return true;
             }}>
-            <Scene key="root" navigationBarStyle={{backgroundColor:Theme.backgroundColor}} titleStyle={{color:'#fff'}} backButtonImage={Images.Back} >
-                <Scene component={Login} key="Login" hideNavBar={true}/>
+            <Scene key="root" navigationBarStyle={{ backgroundColor: Theme.backgroundColor }} titleStyle={{ color: '#fff' }} backButtonImage={Images.Back} >
+                <Scene component={Login} key="Login" hideNavBar={true} />
                 <Scene component={Home} key="Home" title='Home' />
                 <Scene component={Demo} key="Demo" title='Demo' />
                 <Scene component={DemoList} key="DemoList" title='DemoList' />
                 <Scene component={DemoMap} key="DemoMap" title='DemoMap' />
-                
-                
-               
+                <Scene component={DemoComList} key="DemoComList" title='DemoComList' />
+                <Scene component={DemoComListNew} key="DemoComListNew" title='DemoComListNew' />
+
+
             </Scene>
         </Router>
     }
